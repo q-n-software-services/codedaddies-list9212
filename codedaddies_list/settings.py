@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-0h*n76np_(us!ca1d*r0iurv($66khjjge%pjmzl@hr+u=@932
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['codedaddies-list12.herokuapp.com']
 
 
 # Application definition
@@ -76,10 +76,21 @@ WSGI_APPLICATION = 'codedaddies_list.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
+'''DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}'''
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'deida9p6th99j0',
+        'USER': 'qolkztwowegeuy',
+        'PASSWORD': '5c0cf71c6691c3e66c4940ed21f503b38111fb44ff3aa72f6911bd046d49dde3',
+        'HOST': 'ec2-54-209-221-231.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
@@ -118,8 +129,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/static/'
 
 django_heroku.settings(locals())
 
